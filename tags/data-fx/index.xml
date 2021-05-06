@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>data-fx on Landon Ferguson</title>
+    <link>/tags/data-fx/</link>
+    <description>Recent content in data-fx on Landon Ferguson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Apr 2021 02:20:05 -0400</lastBuildDate><atom:link href="/tags/data-fx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Geographic Coordinates to a 3D Sphere</title>
+      <link>/posts/post02/</link>
+      <pubDate>Sun, 18 Apr 2021 02:20:05 -0400</pubDate>
+      
+      <guid>/posts/post02/</guid>
+      <description>I had the idea to add support for longitude and latitude values for my Blender3d addon, Data-FX. The idea is to allow people to select their lon/lat values from a CSV file and have the program plot them onto a 3D sphere. (Or any other 3d representation of a map really but for now a sphere)
+This seemed like an interesting challenge &amp;ndash; I attempted to plot some points around a globe.</description>
+    </item>
+    
+    <item>
+      <title>Data Visualization Addon for Blender3d</title>
+      <link>/posts/post01/</link>
+      <pubDate>Mon, 22 Mar 2021 11:43:05 -0400</pubDate>
+      
+      <guid>/posts/post01/</guid>
+      <description>I&amp;rsquo;ve been using the 3d vfx application Blender for quite some time now (since 2010ish) and decided it would be fun to mess around with it for some other use cases. Using it as a way to visualize data.
+While Blender is commonly used as a tool for digital art, I thought it would be interesting to integrate some type of data loading/parsing. This would also help me hone my python skills.</description>
+    </item>
+    
+  </channel>
+</rss>

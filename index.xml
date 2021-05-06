@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Landon Ferguson</title>
+    <link>/</link>
+    <description>Recent content on Landon Ferguson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 May 2021 15:34:36 -0400</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Tue, 04 May 2021 23:49:43 -0400</pubDate>
+      
+      <guid>/about/</guid>
+      <description>#the-about-page-to-end-all-about-pages{ text-align: center; }  First   Hey! Thanks for checking out my website. If you have any questions about anything here, feel free to contact me by email landonljf@gmail.com. You can also check out my github page.
+Some things This is where I post writeups about anything I find interesting. These posts range will probably range in depth, as it all depends on the time I have avaliable and my interest in the topic at hand.</description>
+    </item>
+    
+    <item>
+      <title>Bayer Matrix Dithering in GLSL for Use in a Horror Game</title>
+      <link>/posts/post03/</link>
+      <pubDate>Tue, 04 May 2021 15:34:36 -0400</pubDate>
+      
+      <guid>/posts/post03/</guid>
+      <description>I&amp;rsquo;ve always wanted to replicate the beautiful dithering style used in the game Return of the Obra Dinn by Lucas Pope. I attempted to implement this type of 1 bit dithering in GLSL with limited experience with shaders, and I went down quite the rabbit hole.
+If you don&amp;rsquo;t already know what dithering is:
+Dithering is a method that is used to lessen color-banding in images by intentionally applying certain noise patterns.</description>
+    </item>
+    
+    <item>
+      <title>I-Hear-Them</title>
+      <link>/projects/i-hear-them/</link>
+      <pubDate>Tue, 04 May 2021 04:58:52 -0400</pubDate>
+      
+      <guid>/projects/i-hear-them/</guid>
+      <description>I-Hear-Them is an in-browser 3D first-person horror game made with ThreeJS with the help of some custom built shaders.
+   --  Play a demo  </description>
+    </item>
+    
+    <item>
+      <title>Data-FX</title>
+      <link>/projects/data-fx/</link>
+      <pubDate>Mon, 03 May 2021 12:52:22 -0400</pubDate>
+      
+      <guid>/projects/data-fx/</guid>
+      <description>Data-FX is a blender3d addon that adds the ability to load and visualize data using various different charts.
+It started as a fun way to learn more about the Python language, but ended up being a fun ongoing side-project that I update regularly.
+   --  View the code  View all posts tagged with &#34;Data-FX&#34;  </description>
+    </item>
+    
+    <item>
+      <title>Geographic Coordinates to a 3D Sphere</title>
+      <link>/posts/post02/</link>
+      <pubDate>Sun, 18 Apr 2021 02:20:05 -0400</pubDate>
+      
+      <guid>/posts/post02/</guid>
+      <description>I had the idea to add support for longitude and latitude values for my Blender3d addon, Data-FX. The idea is to allow people to select their lon/lat values from a CSV file and have the program plot them onto a 3D sphere. (Or any other 3d representation of a map really but for now a sphere)
+This seemed like an interesting challenge &amp;ndash; I attempted to plot some points around a globe.</description>
+    </item>
+    
+    <item>
+      <title>Data Visualization Addon for Blender3d</title>
+      <link>/posts/post01/</link>
+      <pubDate>Mon, 22 Mar 2021 11:43:05 -0400</pubDate>
+      
+      <guid>/posts/post01/</guid>
+      <description>I&amp;rsquo;ve been using the 3d vfx application Blender for quite some time now (since 2010ish) and decided it would be fun to mess around with it for some other use cases. Using it as a way to visualize data.
+While Blender is commonly used as a tool for digital art, I thought it would be interesting to integrate some type of data loading/parsing. This would also help me hone my python skills.</description>
+    </item>
+    
+  </channel>
+</rss>

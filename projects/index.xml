@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Landon Ferguson</title>
+    <link>/projects/</link>
+    <description>Recent content in Projects on Landon Ferguson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 May 2021 04:58:52 -0400</lastBuildDate><atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I-Hear-Them</title>
+      <link>/projects/i-hear-them/</link>
+      <pubDate>Tue, 04 May 2021 04:58:52 -0400</pubDate>
+      
+      <guid>/projects/i-hear-them/</guid>
+      <description>I-Hear-Them is an in-browser 3D first-person horror game made with ThreeJS with the help of some custom built shaders.
+   --  Play a demo  </description>
+    </item>
+    
+    <item>
+      <title>Data-FX</title>
+      <link>/projects/data-fx/</link>
+      <pubDate>Mon, 03 May 2021 12:52:22 -0400</pubDate>
+      
+      <guid>/projects/data-fx/</guid>
+      <description>Data-FX is a blender3d addon that adds the ability to load and visualize data using various different charts.
+It started as a fun way to learn more about the Python language, but ended up being a fun ongoing side-project that I update regularly.
+   --  View the code  View all posts tagged with &#34;Data-FX&#34;  </description>
+    </item>
+    
+  </channel>
+</rss>
