@@ -166,7 +166,7 @@ This seemed like an interesting challenge &ndash; I attempted to plot some point
   <ul>
     <li><a href="#making-earth">Making Earth</a></li>
     <li><a href="#how-to-stick-points-on-a-sphere">How to Stick Points on a Sphere</a></li>
-    <li><a href="#ui">UI</a></li>
+    <li><a href="#copy-paste-ui">Copy Paste UI</a></li>
     <li><a href="#results">Results</a></li>
   </ul>
 </nav>
@@ -211,7 +211,9 @@ This seemed like an interesting challenge &ndash; I attempted to plot some point
 <p>This seemed like an interesting challenge &ndash; I attempted to plot some points around a globe.</p>
 <h2 id="making-earth">Making Earth</h2>
 <p>First, lets generate a sphere and slap on a picture of mother earth <a href="https://visibleearth.nasa.gov/images/73909/december-blue-marble-next-generation-w-topography-and-bathymetry">courtesy of NASA</a>.</p>
-<p><img src="../../images/levelup.jpg" alt="earth"></p>
+<p>
+  <img src="../../images/levelup.jpg" alt="earth">
+</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -290,14 +292,26 @@ Z = r cos(theta)
 </code></pre></td></tr></table>
 </div>
 </div><p>The math here is swapped around so it works for my use case. If anyone wants to explain to me why cos(lat) and sin(lon) like how it&rsquo;s defined doesn&rsquo;t work here for <em>X</em>. But the calculation cos(lat) and cos(lon) works? I imagine it&rsquo;s something to do with how I&rsquo;m rotating the sphere or blender&rsquo;s XYZ directions.</p>
-<p>Actually, now that I&rsquo;m thinking about it, I think wikapedia just lists the inverse but I&rsquo;m not sure.</p>
-<h2 id="ui">UI</h2>
+<p>Actually, now that I&rsquo;m thinking about it, I think Wikapedia just lists the inverse but I&rsquo;m not sure.</p>
+<p>Anyways. Points on a sphere!</p>
+<p>
+  <img src="../../images/ptos.jpg" alt="PointsSphere">
+</p>
+<h2 id="copy-paste-ui">Copy Paste UI</h2>
 <p>I ended up using a similar UI from the scatter plot code. This offers the same functionality as the scatter plot generation like file selection, auto-population for the header fields, and a generate button.</p>
 <p>I also included a dropdown for other types of 3D maps I plan to add.</p>
-<p><img src="../../images/map_UI.png" alt="UI"></p>
+<p>
+  <img src="../../images/map_UI.png" alt="UI">
+</p>
 <h2 id="results">Results</h2>
 <p>I really like how this turned out. Simple but allows for a lot of customization and throwing together visualizations in a matter of seconds is a lot of fun! Cant wait to add more to Data-FX :)</p>
-<p><img src="../../images/rend_world.png" alt="Final"></p>
+<p>
+  <figure>
+    <img src="../../images/rend_world.png" alt="Final">
+    <figcaption>example displaying country_capitals.csv</figcaption>
+  </figure>
+</p>
+<p>above uses the file country_capitals.csv</p>
 
     </div>
   </article>
@@ -351,7 +365,7 @@ Z = r cos(theta)
   <ul>
     <li><a href="#making-earth">Making Earth</a></li>
     <li><a href="#how-to-stick-points-on-a-sphere">How to Stick Points on a Sphere</a></li>
-    <li><a href="#ui">UI</a></li>
+    <li><a href="#copy-paste-ui">Copy Paste UI</a></li>
     <li><a href="#results">Results</a></li>
   </ul>
 </nav>

@@ -214,16 +214,27 @@ I attempted to implement this type of 1 bit dithering in GLSL with limited exper
 <p>If you don&rsquo;t already know what dithering is:</p>
 <p>Dithering is a method that is used to lessen color-banding in images by intentionally applying certain noise patterns. This technique had been around since the Apple II days and its use declined quickly as limited color palettes became a thing of the past.</p>
 <h2 id="bayer-matrix-dithering">Bayer Matrix Dithering</h2>
-<p>Bayer Matrix dithering is a type of ordered dithering in which a threshold map is applied to the pixels. The following image shows a gradient from black to white using Bayer Matrix dithering.</p>
-<p><img src="../../images/8x8.jpg" alt="dithermap"></p>
-<p>This is the main dithering technique used in Return of the Obra Dinn. You can read his full dithering process explanation <a href="https://forums.tigsource.com/index.php?topic=40832.msg1363742#msg1363742">here</a> (That whole thread is a gold mine)</p>
-<p>Pope also uses blue noise dithering and some other neat tricks. However, I&rsquo;m just focusing on the Bayer Matrix dithering for the sake of simplicity.</p>
+<p>A Bayer Matrix is a treshold map used in ordered dithering which allows for a smooth transition from light to dark pixels.</p>
+<p>
+  <figure>
+    <img src="../../images/8x8.jpg" alt="dithermap">
+    <figcaption>Gradient from black to white using a Bayer Matrix</figcaption>
+  </figure>
+</p>
+<p>The Bayer Matrix produces this nice looking crosshatch pattern and gives it the pixel-y look I was going for.</p>
+<p>This is the main dithering technique used in Return of the Obra Dinn. You can read Lucas Pope&rsquo;s full dithering process explanation <a href="https://forums.tigsource.com/index.php?topic=40832.msg1363742#msg1363742">here</a>. It&rsquo;s a really interesting read and shows the lengths a man will go for those sweet retro aesthetics.</p>
+<p>Pope also uses blue noise dithering and some other neat tricks to make the dithering look nice and neat. However, I&rsquo;m just focusing on the Bayer Matrix dithering for the sake of simplicity.</p>
 <h2 id="my-various-attempts">My Various Attempts</h2>
 <p>This happened a few months ago so I forget exactly how I approached the problem. But I remember starting with the <a href="https://github.com/mrdoob/three.js/blob/03d7c6a310241f4376a2839804fc61be02724446/examples/js/shaders/DotScreenShader.js">DotScreenShader</a> by <em>alteredq</em> that comes with the examples folder in the threejs repo.</p>
-<p><img src="../../images/jeff.png" alt="DotScreenShader" title="Now abandoned. Maybe something I'll revisit later?"></p>
+<p>
+  <figure>
+    <img src="../../images/jeff.png" alt="DotScreenShader">
+    <figcaption>Now abandoned. Maybe something I&#39;ll revisit later?</figcaption>
+  </figure>
+</p>
 <p>After messing with that file for a while, I tried for days trying to get some kind of working shader code. I had some bouts of success as I converted some shadertoy code to work with ThreeJS to learn my way around some basic shaders. I began to understand some GLSL concepts. But I knew this would take a long time and a lot of trial and error.</p>
 <h2 id="a-happy-accident">A Happy Accident</h2>
-<p>After shelving the project for a while, I came across <a href="https://github.com/chadxhillary/1bit-shader">this repo</a> containing just what I was after! I had been looking for dithering implementations similar to the style of the Obra Dinn, but failed to find any until this one. I modified the code a bit to work with my project and voila!</p>
+<p>After shelving the project for a while, I came across <a href="https://github.com/chadxhillary/1bit-shader">this repo</a> containing just what I was after! I had been looking for dithering implementations similar to the style seen in Return of the Obra Dinn, but failed to find any until this one. I modified the code a bit to work with my project and voila!</p>
 <p>Not trying to take any credit for the hard work by <em>chadxhillary</em>. I made sure it was cool with him that I use the code and he said feel free to. Big shout out to you <em>chadxhillary</em>.</p>
 <p>One of the things I added to the code was a check to add a few more bits of color to the algorithm.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -264,15 +275,19 @@ I attempted to implement this type of 1 bit dithering in GLSL with limited exper
 </span><span style="color:#6272a4"></span>    gl_FragColor <span style="color:#ff79c6">=</span> vec4(<span style="color:#bd93f9">0.69</span>, <span style="color:#bd93f9">0.04</span>, <span style="color:#bd93f9">0.86</span>, <span style="color:#bd93f9">1.0</span>); <span style="color:#6272a4">// magenta
 </span><span style="color:#6272a4"></span>    }
 
-    <span style="color:#ff79c6">else</span>{gl_FragColor <span style="color:#ff79c6">=</span> vec4(<span style="color:#bd93f9">0.0</span>);}  <span style="color:#6272a4">// dark gray}
+    <span style="color:#ff79c6">else</span>{gl_FragColor <span style="color:#ff79c6">=</span> vec4(<span style="color:#bd93f9">0.0</span>);}  <span style="color:#6272a4">// dark gray
 </span><span style="color:#6272a4"></span>}
 </code></pre></td></tr></table>
 </div>
-</div><p>I also fiddled with the scaling a bit to get an even more retro feeling, while still being able to discern things.</p>
+</div><p>I also messed with the scaling a bit to get a more Macintosh Plus look, while still being able to discern things.</p>
 <h2 id="implementation-in-my-game">Implementation in my Game</h2>
 <p>While I do love the look of the 1-bit dithering, adding a few more bits does add a lot of possibilities for the game. I could switch levels and flip the whole color palette by changing a few variables, which would be super cool to try out.</p>
-<p><img src="../../images/iht_1.png" alt="1bitdither"></p>
-<p><img src="../../images/iht_2.png" alt="manybitdither"></p>
+<p>
+  <img src="../../images/iht_1.png" alt="1bitdither">
+</p>
+<p>
+  <img src="../../images/iht_2.png" alt="manybitdither">
+</p>
 <p>This definitely does the trick in giving off a creepy feeling in-game. Something very not right about that bright and ominous sphere though. That probably adds to the creepy factor. But I digress.</p>
 
     </div>

@@ -92,3 +92,9 @@ body .h1 {
 .me-container{
   float:left;
 }
+
+figcaption{
+  text-align: center;
+  color: #686868;
+  padding-top: 7px;
+}
