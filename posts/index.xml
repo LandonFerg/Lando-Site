@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Landon Ferguson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 May 2021 15:34:36 -0400</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 May 2021 01:32:36 -0400</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Saving Greg: A Ludum Dare 48 Post-Mortem</title>
+      <link>/posts/post04/</link>
+      <pubDate>Sat, 29 May 2021 01:32:36 -0400</pubDate>
+      
+      <guid>/posts/post04/</guid>
+      <description>Saving Greg was my submission for the 48th bi-annual 48 hour game jam Ludum Dare. Here is a look back at what happened during those two days&amp;hellip;
+What Is Greg? Greg is a phenomenon widely observed in my LD submissions. My crutch if you will. By throwing a bit of nonsensical mess into the jam at the very beginning, I find it helps me to not take this thing too seriously, and I usually end up with a patched-together game I can grow to like.</description>
+    </item>
+    
     <item>
       <title>Bayer Matrix Dithering in GLSL for Use in a Horror Game</title>
       <link>/posts/post03/</link>
