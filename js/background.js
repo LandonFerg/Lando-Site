@@ -39,9 +39,9 @@ function calculateSize()
 function draw()
 {
         //noFill();
-        //stroke(8);
-        noStroke()
-        //strokeWeight(15);
+        //stroke(255);
+        //noStroke()
+        //strokeWeight(1);
 
         //strokeWeight(random(7,10));
         //background(0);
@@ -65,14 +65,14 @@ function draw()
                 // find distance between tri midpoints
                 var d = dist(tri.x, tri.y, other.x, other.y);
                 //var d = dist(tri.x + tri.s/2, tri.y-tri.s/2, other.x, other.y);
-                if(tri.x >= windowWidth*0.28 && tri.x <= windowWidth*0.68)
+                if(tri.x >= windowWidth*0.27 && tri.x <= windowWidth*0.67)
                 {
                     // break if intersecting text area
                     overlap = true;
                     break;
                 }
 
-                if(d < tri.s*0.9 + other.s * 0.9)
+                if(d < tri.s + other.s)
                 {
                     overlap = true;
                     break;
@@ -88,30 +88,30 @@ function draw()
             _tri = tris[j];
 
             rng = random(1,4)
-
+            
             if(rng < 2.5)
             {
                 push();
-                //strokeWeight(random(8,9.5));
-                translate(_tri.x + tri.s/2, _tri.y-other.s/2);
+                translate(_tri.x, _tri.y);
                 rotate(random(0, PI*2))
-                translate(-_tri.x + -tri.s/2, -_tri.y-other.s/2);
-                // translate(-_tri.x + -_tri.s/2, -(tri.y-_tri.s)/2);
-                //translate(-tri.s/2, -tri.s/2);
+                scale(_tri.s/2);
+                stroke(0,0,0, 255 - (_tri.y/windowHeight*255));
+                strokeWeight(0.02);
                 var rc = random(18,24);
                 fill(rc,rc,24, 255 - (_tri.y/windowHeight*255));
-                var biggerSize = _tri.s*1.2;
-                var littleRandom = _tri.s*(random(0.8,1.2));
-                triangle(_tri.x, _tri.y, _tri.x + biggerSize, _tri.y, _tri.x + biggerSize/2, _tri.y+littleRandom);
+                triangle(-0.866, 0.5, 0.866, 0.5, 0, -1);
 
                 pop();
             }
             else if(rng < 3.6)
             {
+                push();
                 //strokeWeight(random(7,8));
                 var reverse = windowHeight-(0-_tri.y);
                 //stroke(0,0,0,(_tri.y/windowHeight)*255);
                 //stroke(0,0,0,(minmax(_tri.y/windowHeight)*255, 255, 0));
+                stroke(0,0,0, 255 - (_tri.y/windowHeight*255));
+                strokeWeight(1);
                 var rc = random(18,24);
                 fill(rc,rc,24, 255 - (_tri.y/windowHeight*255));
                 ellipse(_tri.x, _tri.y, _tri.s, _tri.s);
@@ -122,21 +122,20 @@ function draw()
             {
                 push();
                 //strokeWeight(random(6,7));
-                translate(_tri.x + tri.s/2, _tri.y-other.s/2);
+                translate(_tri.x, _tri.y);
                 rotate(random(0, PI*2))
-                translate(-_tri.x + -tri.s/2, -_tri.y-other.s/2);
-                // translate(-_tri.x + -_tri.s/2, -(tri.y-_tri.s)/2);
-                //translate(-tri.s/2, -tri.s/2);
+                stroke(0,0,0, 255 - (_tri.y/windowHeight*255));
+                strokeWeight(1);
                 var rc = random(18,24)
                 fill(rc,rc,24, 255 - (_tri.y/windowHeight*255));
-                rect(_tri.x, _tri.y, _tri.s*0.8, _tri.s);
+                rect(0, 0, _tri.s*0.8, _tri.s);
                 pop();
             }
         }
 
 }
 
-function minmax(val, max, min)
-{
-    return (val - min) / (max - min);
+function minmax(val, max, min) 
+{ 
+    return (val - min) / (max - min); 
 }
