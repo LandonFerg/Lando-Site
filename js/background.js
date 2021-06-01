@@ -136,7 +136,7 @@ function draw()
 
 }
 
-function minmax(val, max, min) 
-{ 
-    return (val - min) / (max - min); 
+function minmax(val, max, min)
+{
+    return (val - min) / (max - min);
 }
