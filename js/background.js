@@ -1,5 +1,4 @@
 var canvas;
-
 var tris = [];
 
 function windowResized()
@@ -13,16 +12,14 @@ function setup()
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0,0)
     canvas.style('z-index', '-1')
-
     noLoop();
 }
-
 
 var cachedTris = [];
 
 function calculateSize()
 {
-    // small chance for big bois
+    // allow a small chance for big shapes
 
     x = random (1, 100);
     if(x > 81)
@@ -38,17 +35,6 @@ function calculateSize()
 
 function draw()
 {
-        //noFill();
-        //stroke(255);
-        //noStroke()
-        //strokeWeight(1);
-
-        //strokeWeight(random(7,10));
-        //background(0);
-        // scale = random(10,20)
-
-        // x = random(0, windowWidth);
-        // y = random(0, windowHeight);
 
         for (var i = 0; i < 200; i++)
         {
@@ -64,7 +50,7 @@ function draw()
                 var other = tris[b]
                 // find distance between tri midpoints
                 var d = dist(tri.x, tri.y, other.x, other.y);
-                //var d = dist(tri.x + tri.s/2, tri.y-tri.s/2, other.x, other.y);
+
                 if(tri.x >= windowWidth*0.27 && tri.x <= windowWidth*0.67)
                 {
                     // break if intersecting text area
@@ -89,6 +75,7 @@ function draw()
 
             rng = random(1,4)
             
+            // add triangles
             if(rng < 2.5)
             {
                 push();
@@ -103,13 +90,12 @@ function draw()
 
                 pop();
             }
+
+            // add ellipses
             else if(rng < 3.6)
             {
                 push();
-                //strokeWeight(random(7,8));
                 var reverse = windowHeight-(0-_tri.y);
-                //stroke(0,0,0,(_tri.y/windowHeight)*255);
-                //stroke(0,0,0,(minmax(_tri.y/windowHeight)*255, 255, 0));
                 stroke(0,0,0, 255 - (_tri.y/windowHeight*255));
                 strokeWeight(1);
                 var rc = random(18,24);
@@ -118,10 +104,10 @@ function draw()
                 pop();
             }
 
+            // add rects
             else if(rng >= 3.6)
             {
                 push();
-                //strokeWeight(random(6,7));
                 translate(_tri.x, _tri.y);
                 rotate(random(0, PI*2))
                 stroke(0,0,0, 255 - (_tri.y/windowHeight*255));

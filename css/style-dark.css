@@ -450,14 +450,14 @@ body td {
   box-sizing: border-box;
 }
 html {
-  margin: 0;
   padding: 0;
   height: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+  margin: auto !important;
+  overflow-x:hidden;
   height: 100%;
   background-color: #1d1f21;
   color: #c9cacc;

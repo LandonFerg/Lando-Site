@@ -12,6 +12,13 @@ if (!!$.prototype.justifiedGallery) {
 
 $(document).ready(function() {
 
+// Find overflow elements...
+//   $.each( $('*'), function() { 
+//     if( $(this).width() > $('body').width()) {
+//         console.log("Wide Element: ", $(this), "Width: ", $(this).width()); 
+//     } 
+// });
+
   /**
    * Shows the responsive navigation menu on mobile.
    */
@@ -83,6 +90,7 @@ $(document).ready(function() {
         }
       });
     }
+
 
     /**
      * Show mobile navigation menu after scrolling upwards,
