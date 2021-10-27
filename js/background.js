@@ -1,3 +1,8 @@
+/*
+Hey, 
+now there's a hoopy frood who really knows where their towel is!
+*/
+
 var canvas;
 var tris = [];
 
@@ -20,7 +25,6 @@ var cachedTris = [];
 function calculateSize()
 {
     // allow a small chance for big shapes
-
     x = random (1, 100);
     if(x > 81)
     {
@@ -87,7 +91,6 @@ function draw()
                 var rc = random(18,24);
                 fill(rc,rc,24, 255 - (_tri.y/windowHeight*255));
                 triangle(-0.866, 0.5, 0.866, 0.5, 0, -1);
-
                 pop();
             }
 
