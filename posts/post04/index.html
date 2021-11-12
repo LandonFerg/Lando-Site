@@ -44,8 +44,32 @@ What Is Greg? Greg is a phenomenon widely observed in my LD submissions. My crut
   
 </head>
 
-<body class="max-width mx-auto px3 ltr">
+<body onload = "window.scroll(0, 120)" class="max-width mx-auto px3 ltr">
   <div class="content index py4">
+  <header id="header">
+  <a href="/">
+  
+    <div id="logo" style="background-image: url(/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>Landon Ferguson</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+      
+        <li><a href="/">/ Home</a></li>
+      
+        <li><a href="/about">/ About &amp; Contact</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
 
   <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -71,6 +95,12 @@ What Is Greg? Greg is a phenomenon widely observed in my LD submissions. My crut
           </a>
         </li>
         
+        
+        <li>
+          <a class="icon" href="/projects/data-fx/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
         
         <li>
           <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
@@ -174,6 +204,7 @@ What Is Greg? Greg is a phenomenon widely observed in my LD submissions. My crut
 
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
+      <section id="/post-top">
       <h1 class="posttitle" itemprop="name headline">
         Saving Greg: A Ludum Dare 48 Post-Mortem
       </h1>
@@ -200,6 +231,7 @@ What Is Greg? Greg is a phenomenon widely observed in my LD submissions. My crut
         </div>
         
       </div>
+      </section>
     </header>
 
   

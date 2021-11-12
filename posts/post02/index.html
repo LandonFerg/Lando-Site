@@ -44,8 +44,32 @@ This seemed like an interesting challenge &ndash; I attempted to plot some point
   
 </head>
 
-<body class="max-width mx-auto px3 ltr">
+<body onload = "window.scroll(0, 120)" class="max-width mx-auto px3 ltr">
   <div class="content index py4">
+  <header id="header">
+  <a href="/">
+  
+    <div id="logo" style="background-image: url(/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>Landon Ferguson</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+      
+        <li><a href="/">/ Home</a></li>
+      
+        <li><a href="/about">/ About &amp; Contact</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
 
   <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -73,7 +97,7 @@ This seemed like an interesting challenge &ndash; I attempted to plot some point
         
         
         <li>
-          <a class="icon" href="/projects/data-fx/">
+          <a class="icon" href="/projects/i-hear-them/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -177,6 +201,7 @@ This seemed like an interesting challenge &ndash; I attempted to plot some point
 
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
+      <section id="/post-top">
       <h1 class="posttitle" itemprop="name headline">
         Geographic Coordinates to a 3D Sphere
       </h1>
@@ -203,6 +228,7 @@ This seemed like an interesting challenge &ndash; I attempted to plot some point
         </div>
         
       </div>
+      </section>
     </header>
 
   
