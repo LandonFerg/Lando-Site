@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Placeholder</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" type="text/css"/ href="css/styles.css">
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#page-top">Robot Bartender</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- <li class="nav-item"><a class="nav-link" href="#!">Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Log In</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="masthead text-center text-white">
+                <div class="container px-2">
+                    <h1 class="display-1">Bar Bot Example</h1>
+                </div>
+            <div class="masthead-content">
+                <div class="container px-2">
+                    <h1 class="masthead-heading mb-0"></h1>
+                    <h2 class="masthead-subheading mb-0"></h2>
+                    <!-- Button select -->
+
+                    <div class = "justify-content-center" style = "padding-bottom: 0.5rem;">
+                        <img style = "-webkit-filter: drop-shadow(0 0 0.75rem #ccc);" class = "btn-imgspace" src="./assets/img/bottle.png" alt="...">
+                        <img style = "-webkit-filter: drop-shadow(0 0 0.75rem #ccc);" src="./assets/img/bottles.png" alt="...">
+                    </div>
+                    <div class="btn-toolbar justify-content-center">
+                        <a class="btn btn-space btn-primary btn-xL rounded-pill" href="#customize">New Drink</a>
+                        <a class="btn btn-primary btn-xL rounded-pill" href="#select">Select Drink</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Drink Selection-->
+        <section id="select">
+            <div class="container px-3 bg-black">
+                <h1 class = "text-center text-white pb-2">Drink Selection</h1>
+                <div class = "drinkTableHolder">
+                    <table class = "table table-bordered" id = "drinkSelect">
+                          <tbody>
+                              <!-- <tr class="clickable-row">
+                                <th>Example</th>
+                            </tr>
+                            <tr class="clickable-row">
+                                <th>Example 2</th>
+                            </tr> -->
+                    </tbody></table>
+                </div>
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <!-- <div class="p-5"><img class="img-fluid rounded-circle" src="" alt="..." /></div> -->
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drink visualization -->
+            <div id="drinkvis" class="">
+
+            </div>
+
+            <div class="container px-3 bg-black">
+                    <section id="customize">
+                    <h1 class = "text-white" style="text-align:center; padding-top: 20px;">Customize</h1>
+                    <div>
+                        <!-- Shots / Liquor -->
+                        <h2 class = "text-white">Shots</h2>
+                        <form class="range-field w-65 pt-2" style="display:inline-flex;">
+                            <input id="sl1" class="border-0" type="range" min="0" max="4" step="0.5" value = "0" style="width:100%;"/>
+                        </form>
+                        <span class="font-weight-bold text-primary valueSpan1"></span>
+                        <label for="sl1" class="myLabel Label1">Light Rum</label>
+
+                        <form class="range-field w-65 pt-2" style="display:inline-flex;">
+                            <input id="sl2" class="border-0" type="range" min="0" max="4" step="0.5" value = "0" style="width:100%;"/>
+                        </form>
+                        <span class="font-weight-bold text-primary valueSpan2"></span>
+                        <label for="sl2" class="myLabel Label2">Dark Rum</label>
+
+                        <form class="range-field w-65 pt-2" style="display:inline-flex;">
+                            <input id="sl3" class="border-0" type="range" min="0" max="4" step="0.5" value = "0" style="width:100%;"/>
+                        </form>
+                        <span class="font-weight-bold text-primary valueSpan3"></span>
+                        <label for="sl3" class="myLabel Label3">Vodka</label>
+
+                        <form class="range-field w-65 pt-2" style="display:inline-flex;">
+                            <input id="sl4" class="border-0" type="range" min="0" max="4" step="0.5" value = "0" style="width:100%;"/>
+                        </form>
+                        <span class="font-weight-bold text-primary valueSpan4"></span>
+                        <label for="sl4" class="myLabel Label4">Tequila</label>
+
+                        <form class="range-field w-65 pt-2" style="display:inline-flex;">
+                            <input id="sl5" class="border-0" type="range" min="0" max="4" step="0.5" value = "0" style="width:100%;"/>
+                        </form>
+                        <span class="font-weight-bold text-primary valueSpan5"></span>
+                        <label for="sl5" class="myLabel Label5">Gin</label>
+
+                        <form class="range-field w-65 py-2" style="display:inline-flex;">
+                            <input id="sl6" class="border-0" type="range" min="0" max="4" step="0.5" value = "0" style="width:100%;"/>
+                        </form>
+                        <span class="font-weight-bold text-primary valueSpan6"></span>
+                        <label for="sl6" class="myLabel Label6">Triple Sec</label>
+                    </div>
+                    
+                    <div>
+                        <!-- Mixers -->
+                        <h2 class = "text-white pt-4">Mixers ( in oz )</h2>
+
+                        <!-- first mixer -->
+                        <form class="range-field w-65" style="display:inline-flex;">
+                            <input id="sl7" class="border-0" type="range" min="0" max="5" step="0.5" value = "0" style="width:100%;"/>
+                        </form>
+                        <span class="font-weight-bold text-primary valueSpan7"></span>
+                        <label for="sl7" class="myLabel2 Label7">Coke</label>
+
+                        <!-- second mixer -->
+                        <form class="range-field w-65" style="display:inline-flex;">
+                            <input id="sl8" class="border-0" type="range" min="0" max="5" step="0.5" value = "0" style="width:100%;"/>
+                        </form>
+                        <span class="font-weight-bold text-primary valueSpan8"></span>
+                        <label for="sl8" class="myLabel2 Label8">Sprite</label>
+
+                        <!-- third mixer -->
+                        <form class="range-field w-65" style="display:inline-flex;">
+                            <input id="sl9" class="border-0" type="range" min="0" max="5" step="0.5" value = "0" style="width:100%;"/>
+                        </form>
+                        <span class="font-weight-bold text-primary valueSpan9"></span>
+                        <label for="sl9" class="myLabel2 Label9">Ginger Beer</label>
+
+                        <!-- fourth mixer -->
+                        <form class="range-field w-65" style="display:inline-flex;">
+                            <input id="sl10" class="border-0" type="range" min="0" max="5" step="0.5" value = "0" style="width:100%;"/>
+                        </form>
+                        <span class="font-weight-bold text-primary valueSpan10"></span>
+                        <label for="sl10" class="myLabel2 Label10">Margarita Mix</label>
+                    </div>
+
+                    <!-- Pour Drink Button -->
+                    <div class = "container px-2 pt-5 pb-4">
+                        <div class = "btn-toolbar justify-content-center">
+                            <!-- <a class="btn btn-primary btn-space larger-save-btn btn-xL rounded-pill" href="#" id="saveBtn">Save Drink</a> -->
+                            <a class="btn btn-primary larger-btn btn-xL rounded-pill" href="#" id="testBtn">Dispense</a>
+                            
+                        </div>
+                    </div>
+
+                <!-- Mixers -->     
+                </div>
+            </div>
+        <!-- Content section 2-->
+        <section>
+            <div class="container px-5">
+                </div>
+            </div>
+        </section>
+        <!-- Content section 3-->
+        <section>
+            <div class="container px-5">
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="mt-5 py-3 bg-dark">
+            <div class="container px-1">
+                <p class="m-0 text-center text-white small">"No, don't you give me none more of that Old Janx Spirit"</p>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- JQuery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Core JS Scripts-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+        <!-- Pretty alerts -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="./drink.js"></script>
+        <script src="client.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="js/p5.js"></script>
+        <script src="js/drinkvis.js"></script>
+    </body>
+</html>

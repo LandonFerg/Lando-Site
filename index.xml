@@ -6,7 +6,19 @@
     <description>Recent content on Landon Ferguson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Jul 2021 12:00:00 -0400</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Nov 2021 02:49:19 -0500</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bartender Bot</title>
+      <link>/projects/bartender-bot/</link>
+      <pubDate>Fri, 12 Nov 2021 02:49:19 -0500</pubDate>
+      
+      <guid>/projects/bartender-bot/</guid>
+      <description>Overview The bar uses 6 servo-controlled valves to dispense the drinks, and 4 air pumps connected to a relay board to dispense the mixers.
+Back-End For this project, I used Nodejs and the SocketIO library for realtime client &amp;gt; server communication.
+The pi emits the local webserver you can connect to from any device on the network, including a windows tablet attatched to the bar.
+The client then sends the drink selection data back to the server, and the server passes that data to a python script.</description>
+    </item>
+    
     <item>
       <title>Data-FX</title>
       <link>/projects/data-fx/</link>
