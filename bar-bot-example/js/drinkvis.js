@@ -12,8 +12,8 @@ let layers = [];
 
 
 function preload() {
-  cup = loadImage('../assets/img/cup.png');
-  cup_mask = loadImage('../assets/img/cup_mask_L.png');
+  cup = loadImage('../bar-bot-example/assets/img/cup.png');
+  cup_mask = loadImage('../bar-bot-example/assets/img/cup_mask_L.png');
 }
 
 function setup() 
