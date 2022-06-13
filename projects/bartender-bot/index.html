@@ -10,7 +10,8 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Bartender Bot" />
 <meta property="og:description" content="Overview The bar uses 6 servo-controlled valves to dispense the drinks, and 4 air pumps connected to a relay board to dispense the mixers.
-Back-End For this project, I used Nodejs and the SocketIO library for realtime client &gt; server communication.
+
+Back-End For this project, I used Nodejs and the SocketIO library for realtime client &gt; server communication.
 The pi emits the local webserver you can connect to from any device on the network, including a windows tablet attatched to the bar.
 The client then sends the drink selection data back to the server, and the server passes that data to a python script." />
 <meta property="og:type" content="article" />
@@ -22,7 +23,8 @@ The client then sends the drink selection data back to the server, and the serve
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Bartender Bot"/>
 <meta name="twitter:description" content="Overview The bar uses 6 servo-controlled valves to dispense the drinks, and 4 air pumps connected to a relay board to dispense the mixers.
-Back-End For this project, I used Nodejs and the SocketIO library for realtime client &gt; server communication.
+
+Back-End For this project, I used Nodejs and the SocketIO library for realtime client &gt; server communication.
 The pi emits the local webserver you can connect to from any device on the network, including a windows tablet attatched to the bar.
 The client then sends the drink selection data back to the server, and the server passes that data to a python script."/>
 
@@ -234,7 +236,8 @@ The client then sends the drink selection data back to the server, and the serve
 </p>
 <p>I used python as the glue for the drink dispensing as the libraries for the motor controller (PCA9685) are widely avaliable at the time of writing this, and the synchronous nature of python code makes handling the time-based dispensing easy.</p>
 <p><em>Note: Since our raspberry pi is emitting a local webserver, we can use both a tablet connected to the bar, as well as any
-device connected to the wifi network</em></p>
+device connected to the wifi network.</em></p>
+<img src="../../images/demo.gif" style="max-width: 400px;">
 <h2 id="front-end">Front-End</h2>
 <p>The Front-end is built from scratch using Bootstrap, CSS, and HTML, with some extra javascript bits to make everything look nice.</p>
 <!-- raw HTML omitted -->
