@@ -10,23 +10,26 @@ class Vehicle {
     this.target = createVector(x, y);
     this.vel = p5.Vector.random2D();
     this.acc = createVector();
-    this.r = 8;
+    this.pointColor = color(random(45, 255), random(45, 255), random(45, 255))
+    this.r = 6;
     this.maxspeed = 10;
     this.maxforce = 1;
   }
 
   behaviors() {
-    var arrive = this.arrive(this.target);
+  var arrive = this.arrive(this.target);
 
-    var mouse = createVector(mouseX, mouseY);
-    var flee = this.flee(mouse);
+  // Always apply the arrive force
+  this.applyForce(arrive);
 
-    arrive.mult(1);
+  if (touches.length > 0 && touches[0]) {
+    // Use the first touch if there are active touches
+    var targetVector = createVector(touches[0].x, touches[0].y);
+    var flee = this.flee(targetVector);
+
     flee.mult(5);
-
-    this.applyForce(arrive);
     this.applyForce(flee);
-    
+  }
   }
 
   applyForce(f) {
@@ -40,7 +43,7 @@ class Vehicle {
   }
 
   show() {
-    stroke(255);
+    stroke(this.pointColor);
     strokeWeight(this.r);
     point(this.pos.x, this.pos.y);
   }
