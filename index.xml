@@ -6,28 +6,38 @@
     <description>Recent content on Landon Ferguson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Nov 2021 02:49:19 -0500</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Nov 2024 12:00:00 -0400</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data-FX</title>
+      <link>/projects/data-fx/</link>
+      <pubDate>Mon, 25 Nov 2024 12:00:00 -0400</pubDate>
+      
+      <guid>/projects/data-fx/</guid>
+      <description>Data-FX is a blender3d addon that adds the ability to load and visualize data using various different charts.
+It started as a fun way to learn more about the Python language, but ended up being a fun ongoing side-project that I update regularly.
+   --  View the code  View all posts tagged with &#34;Data-FX&#34;  </description>
+    </item>
+    
+    <item>
+      <title>Unity Fluid</title>
+      <link>/projects/unity-fluid/</link>
+      <pubDate>Sat, 04 Feb 2023 04:58:52 -0400</pubDate>
+      
+      <guid>/projects/unity-fluid/</guid>
+      <description>Position Based Dynamics This fluid sim runs entirely on the GPU using Unity Compute Shaders, implementing the method from this research paper. The current implementation uses a Bitonic sort for spatial hashing, though other parallel sorting algorithms could potentially offer better performance.
+ GPU Handles Collisions Since the fluid system runs entirely on the GPU, we have to draw physical objects as a set of particles on the GPU.</description>
+    </item>
+    
     <item>
       <title>Bartender Bot</title>
       <link>/projects/bartender-bot/</link>
-      <pubDate>Fri, 12 Nov 2021 02:49:19 -0500</pubDate>
+      <pubDate>Fri, 10 Jun 2022 02:49:19 -0500</pubDate>
       
       <guid>/projects/bartender-bot/</guid>
       <description>Overview The bar uses 6 servo-controlled valves to dispense the drinks, and 4 air pumps connected to a relay board to dispense the mixers.
 Back-End For this project, I used Nodejs and the SocketIO library for realtime client &amp;gt; server communication.
 The pi emits the local webserver you can connect to from any device on the network, including a windows tablet attatched to the bar.
 The client then sends the drink selection data back to the server, and the server passes that data to a python script.</description>
-    </item>
-    
-    <item>
-      <title>Data-FX</title>
-      <link>/projects/data-fx/</link>
-      <pubDate>Thu, 08 Jul 2021 12:00:00 -0400</pubDate>
-      
-      <guid>/projects/data-fx/</guid>
-      <description>Data-FX is a blender3d addon that adds the ability to load and visualize data using various different charts.
-It started as a fun way to learn more about the Python language, but ended up being a fun ongoing side-project that I update regularly.
-   --  View the code  View all posts tagged with &#34;Data-FX&#34;  </description>
     </item>
     
     <item>
@@ -46,10 +56,14 @@ What Is Greg? Greg is a phenomenon widely observed in my LD submissions. My crut
       <pubDate>Tue, 04 May 2021 23:49:43 -0400</pubDate>
       
       <guid>/about/</guid>
-      <description>#the-about-page-to-end-all-about-pages{ text-align: center; }  About   My name&amp;rsquo;s Landon Ferguson,
-I&amp;rsquo;m a Comp Sci. student in the Orlando area interested in software development, robotics, and computer graphics.
-I have experience in programming things like games, web applications (front-end &amp;amp; back-end), embedded systems, GPU based Fluid Dynamics, and more!
-I&amp;rsquo;m constantly learning through the use of my personal projects, I love learning new concepts and applying them for use in real-world applications.</description>
+      <description> #the-about-page-to-end-all-about-pages{ text-align: center; }  About I code things
+Feel free to look at my github page.
+Contact I&amp;rsquo;m best reached by email at landonljf@gmail.com.
+Things I Use Languages : C#, C++, Python, JavaScript, GLSL/HSLS
+Frameworks : Bootstrap, jQuery, Socket.IO, Flask, Three.js, p5.js
+Databases : MongoDB, mySQL, Redis, SQLite
+Tools : Unity3D, Blender, Node.js, Linux, Bash, PowerShell
+ .content { display: flow-root; } .me-container{ float: right; shape-outside: circle(50%); }  </description>
     </item>
     
     <item>

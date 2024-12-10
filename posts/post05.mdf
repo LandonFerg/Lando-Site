@@ -1,0 +1,28 @@
+<!-- ---
+title: "Grabbin' Cats!"
+authors: ["Lando_NG"]
+date: 2022-02-06T15:47:56-05:00
+draft: true
+---
+
+## Intro
+Everyone needs a friend! Why don't I head over to my [local animal shelter's](http://www.orangecountyanimalservicesfl.net/) website and see who's ready for adoption? There's some options to sort them, but it leaves something to be desired...
+
+## The problem
+![](../../images/oc_search_sm.jpg "Sorting options from the shelter's website")
+
+There's very limited options when it comes to sorting all the animals. What if you were looking for a specific *type* of cat or dog? What if you wanted to sort the animals by latest to greatest? Feral or non-feral? You can see what I mean in terms of limited options here.
+
+
+## The solution
+I started poking around using chrome's dev tools and noticed the json data was sitting in the raw HTML right between a `<script>` tag.
+![](../../images/raw_json.jpg)
+
+Using the magic of NodeJS and some handy packages like *jsdom* and *curl* I was able to print out all the json data in a terminal.
+
+
+![](../../images/json_beautify.jpg "beautified data")
+As we can see here, there's a ton of options which their website doesn't include in their sorting.
+
+
+ -->

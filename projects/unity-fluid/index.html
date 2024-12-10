@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Unity Fluid | Landon Ferguson</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Unity Fluid" />
+<meta property="og:description" content="Position Based Dynamics This fluid sim runs entirely on the GPU using Unity Compute Shaders, implementing the method from this research paper. The current implementation uses a Bitonic sort for spatial hashing, though other parallel sorting algorithms could potentially offer better performance.
+ GPU Handles Collisions Since the fluid system runs entirely on the GPU, we have to draw physical objects as a set of particles on the GPU." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/projects/unity-fluid/" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2023-02-04T04:58:52-04:00" />
+<meta property="article:modified_time" content="2023-02-04T04:58:52-04:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Unity Fluid"/>
+<meta name="twitter:description" content="Position Based Dynamics This fluid sim runs entirely on the GPU using Unity Compute Shaders, implementing the method from this research paper. The current implementation uses a Bitonic sort for spatial hashing, though other parallel sorting algorithms could potentially offer better performance.
+ GPU Handles Collisions Since the fluid system runs entirely on the GPU, we have to draw physical objects as a set of particles on the GPU."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="/css/style-dark.css">
+  
+   <link rel="stylesheet" href="/css/custom.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+  <header id="header">
+  <a href="/">
+  
+    <div id="logo" style="background-image: url(/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>Landon Ferguson</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+      
+        <li><a href="/">/ Home</a></li>
+      
+        <li><a href="/about">/ About &amp; Contact</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">/ Home</a></li>
+         
+        <li><a href="/about">/ About &amp; Contact</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" /projects/bartender-bot/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="/projects/data-fx/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fprojects%2funity-fluid%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fprojects%2funity-fluid%2f&text=Unity%20Fluid">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fprojects%2funity-fluid%2f&title=Unity%20Fluid">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fprojects%2funity-fluid%2f&is_video=false&description=Unity%20Fluid">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Unity%20Fluid&body=Check out this article: %2fprojects%2funity-fluid%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fprojects%2funity-fluid%2f&title=Unity%20Fluid">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fprojects%2funity-fluid%2f&title=Unity%20Fluid">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=%2fprojects%2funity-fluid%2f&title=Unity%20Fluid">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=%2fprojects%2funity-fluid%2f&title=Unity%20Fluid">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fprojects%2funity-fluid%2f&name=Unity%20Fluid&description=Position%20Based%20Dynamics%20This%20fluid%20sim%20runs%20entirely%20on%20the%20GPU%20using%20Unity%20Compute%20Shaders%2c%20implementing%20the%20method%20from%20this%20research%20paper.%20The%20current%20implementation%20uses%20a%20Bitonic%20sort%20for%20spatial%20hashing%2c%20though%20other%20parallel%20sorting%20algorithms%20could%20potentially%20offer%20better%20performance.%0a%20GPU%20Handles%20Collisions%20Since%20the%20fluid%20system%20runs%20entirely%20on%20the%20GPU%2c%20we%20have%20to%20draw%20physical%20objects%20as%20a%20set%20of%20particles%20on%20the%20GPU.">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fprojects%2funity-fluid%2f&t=Unity%20Fluid">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#position-based-dynamics">Position Based Dynamics</a></li>
+    <li><a href="#gpu-handles-collisions">GPU Handles Collisions</a></li>
+    <li><a href="#collision-example">Collision example</a></li>
+    <li><a href="#planned-features">Planned features</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="projecttitle" itemprop="name headline">
+        Unity Fluid
+      </h1>
+      <div class="meta">
+        
+        <div class="projectdate">
+          <span>updated:</span>
+          
+          <time datetime="2023-02-04 04:58:52 -0400 -0400" itemprop="datePublished">2023-02-04</time>
+          
+          <span>
+            
+          </span>
+        </div>
+        
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      
+
+<video autoplay loop muted playsinline width="500">
+    <source src="../../images/fluid.webm" type="video/webm">
+</video>
+
+<h2 id="position-based-dynamics">Position Based Dynamics</h2>
+<p>This fluid sim runs entirely on the GPU using Unity Compute Shaders, implementing the method from <a href="https://mmacklin.com/pbf_sig_preprint.pdf">this</a> research paper. The current implementation uses a Bitonic sort for spatial hashing, though other parallel sorting algorithms could potentially offer better performance.</p>
+
+
+<video autoplay loop muted playsinline width="500">
+    <source src="../../images/fluid_2.webm" type="video/webm">
+</video>
+
+<h2 id="gpu-handles-collisions">GPU Handles Collisions</h2>
+<p>Since the fluid system runs entirely on the GPU, we have to draw physical objects as a set of particles <em>on the GPU</em>. I then just made a script
+that checks if an object is moving, if it is, we update the fluid collision particle positions.</p>
+<h2 id="collision-example">Collision example</h2>
+<p>We have to take our &ldquo;boundary particles&rdquo; compute buffer (commonly refferred to as our fluid domain) and add our collision particles.
+Here is a simple script that does that.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#6272a4">// in FluidCollider.cs...
+</span><span style="color:#6272a4"></span>
+<span style="color:#ff79c6">private</span> <span style="color:#ff79c6">void</span> CreateParticles(ParticleSource source, Matrix4x4 RTS)
+{
+    Vector4[] positions = <span style="color:#ff79c6">new</span> Vector4[NumParticles];
+
+    <span style="color:#8be9fd">float</span> inf = <span style="color:#8be9fd">float</span>.PositiveInfinity;
+    Vector3 min = <span style="color:#ff79c6">new</span> Vector3(inf, inf, inf);
+    Vector3 max = <span style="color:#ff79c6">new</span> Vector3(-inf, -inf, -inf);
+
+    <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd">int</span> i = <span style="color:#bd93f9">0</span>; i &lt; NumParticles; i++)
+    {
+        Vector4 pos = RTS * source.Positions[i];
+        positions[i] = pos;
+
+        min = Vector3.Min(min, <span style="color:#ff79c6">new</span> Vector3(pos.x, pos.y, pos.z));
+        max = Vector3.Max(max, <span style="color:#ff79c6">new</span> Vector3(pos.x, pos.y, pos.z));
+    }
+
+    min -= <span style="color:#ff79c6">new</span> Vector3(ParticleRadius, ParticleRadius, ParticleRadius);
+    max += <span style="color:#ff79c6">new</span> Vector3(ParticleRadius, ParticleRadius, ParticleRadius);
+
+    Bounds = <span style="color:#ff79c6">new</span> Bounds();
+    Bounds.SetMinMax(min, max);
+
+    PositionsBuffer = <span style="color:#ff79c6">new</span> ComputeBuffer(NumParticles, <span style="color:#bd93f9">4</span> * <span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">float</span>));
+    PositionsBuffer.SetData(positions);
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>The <code>NumParticles</code> property determines the existing boundary particle count:<br>
+<code>public int NumParticles { get; private set; }</code>.
+We need to keep track of this value to ensure we aren&rsquo;t increasing or decreasing the buffer more than we need to.</p>
+<p>Currently there isn&rsquo;t any voxelization of colliders, it simply computes the collider size by the bounding box of the GameObject.</p>
+<h2 id="planned-features">Planned features</h2>
+<p>I want to eventually add voxelization to this, as well as improve the performance. I have some ideas involving chunking our fluid domain
+so we could potentially run a lot of particles (&gt;100k).</p>
+
+    </div>
+  </article>
+
+  
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">/ Home</a></li>
+         
+          <li><a href="/about">/ About &amp; Contact</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#position-based-dynamics">Position Based Dynamics</a></li>
+    <li><a href="#gpu-handles-collisions">GPU Handles Collisions</a></li>
+    <li><a href="#collision-example">Collision example</a></li>
+    <li><a href="#planned-features">Planned features</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fprojects%2funity-fluid%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fprojects%2funity-fluid%2f&text=Unity%20Fluid">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fprojects%2funity-fluid%2f&title=Unity%20Fluid">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fprojects%2funity-fluid%2f&is_video=false&description=Unity%20Fluid">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Unity%20Fluid&body=Check out this article: %2fprojects%2funity-fluid%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fprojects%2funity-fluid%2f&title=Unity%20Fluid">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fprojects%2funity-fluid%2f&title=Unity%20Fluid">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=%2fprojects%2funity-fluid%2f&title=Unity%20Fluid">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=%2fprojects%2funity-fluid%2f&title=Unity%20Fluid">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fprojects%2funity-fluid%2f&name=Unity%20Fluid&description=Position%20Based%20Dynamics%20This%20fluid%20sim%20runs%20entirely%20on%20the%20GPU%20using%20Unity%20Compute%20Shaders%2c%20implementing%20the%20method%20from%20this%20research%20paper.%20The%20current%20implementation%20uses%20a%20Bitonic%20sort%20for%20spatial%20hashing%2c%20though%20other%20parallel%20sorting%20algorithms%20could%20potentially%20offer%20better%20performance.%0a%20GPU%20Handles%20Collisions%20Since%20the%20fluid%20system%20runs%20entirely%20on%20the%20GPU%2c%20we%20have%20to%20draw%20physical%20objects%20as%20a%20set%20of%20particles%20on%20the%20GPU.">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fprojects%2funity-fluid%2f&t=Unity%20Fluid">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2024  Landon Ferguson 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">/ Home</a></li>
+         
+        <li><a href="/about">/ About &amp; Contact</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+<script src=/js/p5/p5.min.js></script>
+<script src=/js/background.js></script>
+
+
+
+</html>

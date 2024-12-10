@@ -10,21 +10,19 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Bartender Bot" />
 <meta property="og:description" content="Overview The bar uses 6 servo-controlled valves to dispense the drinks, and 4 air pumps connected to a relay board to dispense the mixers.
-
-Back-End For this project, I used Nodejs and the SocketIO library for realtime client &gt; server communication.
+Back-End For this project, I used Nodejs and the SocketIO library for realtime client &gt; server communication.
 The pi emits the local webserver you can connect to from any device on the network, including a windows tablet attatched to the bar.
 The client then sends the drink selection data back to the server, and the server passes that data to a python script." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/projects/bartender-bot/" /><meta property="article:section" content="projects" />
-<meta property="article:published_time" content="2021-11-12T02:49:19-05:00" />
-<meta property="article:modified_time" content="2021-11-12T02:49:19-05:00" />
+<meta property="article:published_time" content="2022-06-10T02:49:19-05:00" />
+<meta property="article:modified_time" content="2022-06-10T02:49:19-05:00" />
 
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Bartender Bot"/>
 <meta name="twitter:description" content="Overview The bar uses 6 servo-controlled valves to dispense the drinks, and 4 air pumps connected to a relay board to dispense the mixers.
-
-Back-End For this project, I used Nodejs and the SocketIO library for realtime client &gt; server communication.
+Back-End For this project, I used Nodejs and the SocketIO library for realtime client &gt; server communication.
 The pi emits the local webserver you can connect to from any device on the network, including a windows tablet attatched to the bar.
 The client then sends the drink selection data back to the server, and the server passes that data to a python script."/>
 
@@ -95,11 +93,17 @@ The client then sends the drink selection data back to the server, and the serve
       <ul>
         
         <li>
-          <a class="icon" href=" /projects/data-fx/">
+          <a class="icon" href=" /posts/post04/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
+        
+        <li>
+          <a class="icon" href="/projects/unity-fluid/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
         
         <li>
           <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
@@ -209,7 +213,7 @@ The client then sends the drink selection data back to the server, and the serve
         <div class="projectdate">
           <span>updated:</span>
           
-          <time datetime="2021-11-12 02:49:19 -0500 EST" itemprop="datePublished">2022-06-10</time>
+          <time datetime="2022-06-10 02:49:19 -0500 -0500" itemprop="datePublished">2022-06-10</time>
           
           <span>
             
@@ -236,11 +240,13 @@ The client then sends the drink selection data back to the server, and the serve
 </p>
 <p>I used python as the glue for the drink dispensing as the libraries for the motor controller (PCA9685) are widely avaliable at the time of writing this, and the synchronous nature of python code makes handling the time-based dispensing easy.</p>
 <p><em>Note: Since our raspberry pi is emitting a local webserver, we can use both a tablet connected to the bar, as well as any
-device connected to the wifi network.</em></p>
+device connected to the wifi network</em></p>
+
+
 <video width = "400" controls>
   <source src="../../images/demo.mp4" type="video/mp4">
 </video>
-<!-- <video src="../../images/demo.mp4" style="max-width: 400px;"></video> -->
+
 <h2 id="front-end">Front-End</h2>
 <p>The Front-end is built from scratch using Bootstrap, CSS, and HTML, with some extra javascript bits to make everything look nice.</p>
 <!-- raw HTML omitted -->
@@ -418,7 +424,7 @@ if they&rsquo;re nearing (or have hit) these limits.</p>
 
   <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2021  Landon Ferguson 
+    Copyright  &copy; 2024  Landon Ferguson 
   </div>
   <div class="footer-right">
     <nav>
