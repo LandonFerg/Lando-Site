@@ -10,7 +10,7 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Unity Fluid" />
 <meta property="og:description" content="Position Based Dynamics This fluid sim runs entirely on the GPU using Unity Compute Shaders, implementing the method from this research paper. The current implementation uses a Bitonic sort for spatial hashing, though other parallel sorting algorithms could potentially offer better performance.
- GPU Handles Collisions Since the fluid system runs entirely on the GPU, we have to draw physical objects as a set of particles on the GPU." />
+ GPU Handles Collisions Since the fluid system runs on the GPU, we have to represent physical objects as a set of particles on the GPU. I then just made a script that checks if an object is moving, if it is, we update the fluid collision particle positions." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/projects/unity-fluid/" /><meta property="article:section" content="projects" />
 <meta property="article:published_time" content="2023-02-04T04:58:52-04:00" />
@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Unity Fluid"/>
 <meta name="twitter:description" content="Position Based Dynamics This fluid sim runs entirely on the GPU using Unity Compute Shaders, implementing the method from this research paper. The current implementation uses a Bitonic sort for spatial hashing, though other parallel sorting algorithms could potentially offer better performance.
- GPU Handles Collisions Since the fluid system runs entirely on the GPU, we have to draw physical objects as a set of particles on the GPU."/>
+ GPU Handles Collisions Since the fluid system runs on the GPU, we have to represent physical objects as a set of particles on the GPU. I then just made a script that checks if an object is moving, if it is, we update the fluid collision particle positions."/>
 
   
   
@@ -172,7 +172,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fprojects%2funity-fluid%2f&name=Unity%20Fluid&description=Position%20Based%20Dynamics%20This%20fluid%20sim%20runs%20entirely%20on%20the%20GPU%20using%20Unity%20Compute%20Shaders%2c%20implementing%20the%20method%20from%20this%20research%20paper.%20The%20current%20implementation%20uses%20a%20Bitonic%20sort%20for%20spatial%20hashing%2c%20though%20other%20parallel%20sorting%20algorithms%20could%20potentially%20offer%20better%20performance.%0a%20GPU%20Handles%20Collisions%20Since%20the%20fluid%20system%20runs%20entirely%20on%20the%20GPU%2c%20we%20have%20to%20draw%20physical%20objects%20as%20a%20set%20of%20particles%20on%20the%20GPU.">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fprojects%2funity-fluid%2f&name=Unity%20Fluid&description=Position%20Based%20Dynamics%20This%20fluid%20sim%20runs%20entirely%20on%20the%20GPU%20using%20Unity%20Compute%20Shaders%2c%20implementing%20the%20method%20from%20this%20research%20paper.%20The%20current%20implementation%20uses%20a%20Bitonic%20sort%20for%20spatial%20hashing%2c%20though%20other%20parallel%20sorting%20algorithms%20could%20potentially%20offer%20better%20performance.%0a%20GPU%20Handles%20Collisions%20Since%20the%20fluid%20system%20runs%20on%20the%20GPU%2c%20we%20have%20to%20represent%20physical%20objects%20as%20a%20set%20of%20particles%20on%20the%20GPU.%20I%20then%20just%20made%20a%20script%20that%20checks%20if%20an%20object%20is%20moving%2c%20if%20it%20is%2c%20we%20update%20the%20fluid%20collision%20particle%20positions.">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -236,7 +236,7 @@
 </video>
 
 <h2 id="gpu-handles-collisions">GPU Handles Collisions</h2>
-<p>Since the fluid system runs entirely on the GPU, we have to draw physical objects as a set of particles <em>on the GPU</em>. I then just made a script
+<p>Since the fluid system runs on the GPU, we have to represent physical objects as a set of particles <em>on the GPU</em>. I then just made a script
 that checks if an object is moving, if it is, we update the fluid collision particle positions.</p>
 <h2 id="collision-example">Collision example</h2>
 <p>We have to take our &ldquo;boundary particles&rdquo; compute buffer (commonly refferred to as our fluid domain) and add our collision particles.
@@ -394,7 +394,7 @@ so we could potentially run a lot of particles (&gt;100k).</p>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fprojects%2funity-fluid%2f&name=Unity%20Fluid&description=Position%20Based%20Dynamics%20This%20fluid%20sim%20runs%20entirely%20on%20the%20GPU%20using%20Unity%20Compute%20Shaders%2c%20implementing%20the%20method%20from%20this%20research%20paper.%20The%20current%20implementation%20uses%20a%20Bitonic%20sort%20for%20spatial%20hashing%2c%20though%20other%20parallel%20sorting%20algorithms%20could%20potentially%20offer%20better%20performance.%0a%20GPU%20Handles%20Collisions%20Since%20the%20fluid%20system%20runs%20entirely%20on%20the%20GPU%2c%20we%20have%20to%20draw%20physical%20objects%20as%20a%20set%20of%20particles%20on%20the%20GPU.">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fprojects%2funity-fluid%2f&name=Unity%20Fluid&description=Position%20Based%20Dynamics%20This%20fluid%20sim%20runs%20entirely%20on%20the%20GPU%20using%20Unity%20Compute%20Shaders%2c%20implementing%20the%20method%20from%20this%20research%20paper.%20The%20current%20implementation%20uses%20a%20Bitonic%20sort%20for%20spatial%20hashing%2c%20though%20other%20parallel%20sorting%20algorithms%20could%20potentially%20offer%20better%20performance.%0a%20GPU%20Handles%20Collisions%20Since%20the%20fluid%20system%20runs%20on%20the%20GPU%2c%20we%20have%20to%20represent%20physical%20objects%20as%20a%20set%20of%20particles%20on%20the%20GPU.%20I%20then%20just%20made%20a%20script%20that%20checks%20if%20an%20object%20is%20moving%2c%20if%20it%20is%2c%20we%20update%20the%20fluid%20collision%20particle%20positions.">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

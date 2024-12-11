@@ -25,7 +25,7 @@ It started as a fun way to learn more about the Python language, but ended up be
       
       <guid>/projects/unity-fluid/</guid>
       <description>Position Based Dynamics This fluid sim runs entirely on the GPU using Unity Compute Shaders, implementing the method from this research paper. The current implementation uses a Bitonic sort for spatial hashing, though other parallel sorting algorithms could potentially offer better performance.
- GPU Handles Collisions Since the fluid system runs entirely on the GPU, we have to draw physical objects as a set of particles on the GPU.</description>
+ GPU Handles Collisions Since the fluid system runs on the GPU, we have to represent physical objects as a set of particles on the GPU. I then just made a script that checks if an object is moving, if it is, we update the fluid collision particle positions.</description>
     </item>
     
     <item>
