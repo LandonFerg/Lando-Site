@@ -40,6 +40,7 @@ function calculateSize()
 function draw()
 {
 
+    let xc = 200, yc = 220;
         for (var i = 0; i < 200; i++)
         {
             var tri = {
@@ -88,7 +89,7 @@ function draw()
                 scale(_tri.s/2);
                 stroke(0,0,0, 255 - (_tri.y/windowHeight*255));
                 strokeWeight(0.02);
-                var rc = random(18,24);
+                var rc = random(xc,yc);
                 fill(rc,rc,24, 255 - (_tri.y/windowHeight*255));
                 triangle(-0.866, 0.5, 0.866, 0.5, 0, -1);
                 pop();
@@ -101,7 +102,7 @@ function draw()
                 var reverse = windowHeight-(0-_tri.y);
                 stroke(0,0,0, 255 - (_tri.y/windowHeight*255));
                 strokeWeight(1);
-                var rc = random(18,24);
+                var rc = random(xc,yc);
                 fill(rc,rc,24, 255 - (_tri.y/windowHeight*255));
                 ellipse(_tri.x, _tri.y, _tri.s, _tri.s);
                 pop();
@@ -115,7 +116,7 @@ function draw()
                 rotate(random(0, PI*2))
                 stroke(0,0,0, 255 - (_tri.y/windowHeight*255));
                 strokeWeight(1);
-                var rc = random(18,24)
+                var rc = random(xc,yc)
                 fill(rc,rc,24, 255 - (_tri.y/windowHeight*255));
                 rect(0, 0, _tri.s*0.8, _tri.s);
                 pop();
