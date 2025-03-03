@@ -338,53 +338,103 @@ What Is Greg? Greg is a phenomenon widely observed in my LD submissions. My crut
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">void</span> StartSimonSays(<span style="color:#8be9fd">int</span> difficulty) <span style="color:#6272a4">// call this when u wanna start game
-</span><span style="color:#6272a4"></span>{
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#6272a4">/**
+</span><span style="color:#6272a4"> * Simon Says Game Controller
+</span><span style="color:#6272a4"> * Handles game initialization and button sequence playback
+</span><span style="color:#6272a4"> */</span>
+
+<span style="color:#6272a4">// call this when player approaches
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">void</span> StartSimonSays(<span style="color:#8be9fd">int</span> difficulty
+{
     playingGame = <span style="color:#ff79c6">true</span>;
-    populateButtonOrder(difficulty); <span style="color:#6272a4">// populate random items
-</span><span style="color:#6272a4"></span>    StartCoroutine(LightButtons(<span style="color:#bd93f9">2.0f</span>)); <span style="color:#6272a4">// start game
+    populateButtonOrder(difficulty);  <span style="color:#6272a4">// populate random items
+</span><span style="color:#6272a4"></span>    StartCoroutine(LightButtons(<span style="color:#bd93f9">2.0f</span>));  <span style="color:#6272a4">// start game
 </span><span style="color:#6272a4"></span>}
 
-IEnumerator LightButtons(<span style="color:#8be9fd">float</span> prewait)
+<span style="color:#6272a4">// coroutine that handles the sequential lighting of buttons in the pattern
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">private</span> IEnumerator LightButtons(<span style="color:#8be9fd">float</span> prewait)
 {
-    <span style="color:#ff79c6">yield</span> <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> WaitForSeconds(prewait); <span style="color:#6272a4">// little delay so it doesnt restart isntantly
-</span><span style="color:#6272a4"></span>    lightCounter = <span style="color:#bd93f9">0</span>;
-    <span style="color:#ff79c6">while</span>(lightCounter &lt; buttonOrder.Count)
+    <span style="color:#6272a4">// painful delay so it doesn&#39;t restart instantly
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">yield</span> <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> WaitForSeconds(prewait);
+    
+    lightCounter = <span style="color:#bd93f9">0</span>;
+    
+    <span style="color:#ff79c6">while</span> (lightCounter &lt; buttonOrder.Count)
     {
         <span style="color:#ff79c6">yield</span> <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> WaitForSeconds(<span style="color:#bd93f9">1f</span>);
         lightsGoing = <span style="color:#ff79c6">true</span>;
         Debug.Log(<span style="color:#f1fa8c">&#34;in coroutine Loop&#34;</span>);
-
+        
         <span style="color:#6272a4">// light up a given button
-</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span>(buttonOrder[lightCounter] == <span style="color:#f1fa8c">&#34;green&#34;</span>)
-            gButton.material.EnableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
-        <span style="color:#ff79c6">if</span>(buttonOrder[lightCounter] == <span style="color:#f1fa8c">&#34;blue&#34;</span>)
-            bButton.material.EnableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
-        <span style="color:#ff79c6">if</span>(buttonOrder[lightCounter] == <span style="color:#f1fa8c">&#34;red&#34;</span>)
-            rButton.material.EnableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
-        <span style="color:#ff79c6">if</span>(buttonOrder[lightCounter] == <span style="color:#f1fa8c">&#34;yellow&#34;</span>)
-            yButton.material.EnableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
-
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">switch</span> (buttonOrder[lightCounter])
+        {
+            <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;green&#34;</span>:
+                gButton.material.EnableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
+                <span style="color:#ff79c6">break</span>;
+            <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;blue&#34;</span>:
+                bButton.material.EnableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
+                <span style="color:#ff79c6">break</span>;
+            <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;red&#34;</span>:
+                rButton.material.EnableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
+                <span style="color:#ff79c6">break</span>;
+            <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;yellow&#34;</span>:
+                yButton.material.EnableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
+                <span style="color:#ff79c6">break</span>;
+        }
+        
         <span style="color:#6272a4">// play a random noise when you click a button
 </span><span style="color:#6272a4"></span>        gameButtonSpeaker.pitch = Random.Range(<span style="color:#bd93f9">0.8f</span>, <span style="color:#bd93f9">1.2f</span>);
         gameButtonSpeaker.Play();
-
+        
         <span style="color:#6272a4">// stay lit for buttonWaitTime
 </span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">yield</span> <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> WaitForSeconds(buttonWaitTime);
-
+        
         <span style="color:#6272a4">// turn our button lights off
-</span><span style="color:#6272a4"></span>        gButton.material.DisableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
-        bButton.material.DisableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
-        rButton.material.DisableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
-        yButton.material.DisableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
+</span><span style="color:#6272a4"></span>        DisableAllButtonLights();
+        
         <span style="color:#ff79c6">yield</span> <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> WaitForSeconds(<span style="color:#bd93f9">0.2f</span>);
         lightCounter++;
         <span style="color:#ff79c6">yield</span> <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">null</span>;
     }
+    
     lightsGoing = <span style="color:#ff79c6">false</span>;
     <span style="color:#ff79c6">yield</span> <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">null</span>;
+}
+
+<span style="color:#6272a4">// helper method to turn off all button lights
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">private</span> <span style="color:#ff79c6">void</span> DisableAllButtonLights()
+{
+    gButton.material.DisableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
+    bButton.material.DisableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
+    rButton.material.DisableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
+    yButton.material.DisableKeyword(<span style="color:#f1fa8c">&#34;_EMISSION&#34;</span>);
 }
 </code></pre></td></tr></table>
 </div>
@@ -561,7 +611,7 @@ Thanks for reading!</p>
 
   <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2024  Landon Ferguson 
+    Copyright  &copy; 2025  Landon Ferguson 
   </div>
   <div class="footer-right">
     <nav>

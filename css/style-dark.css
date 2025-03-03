@@ -1064,7 +1064,7 @@ body {
   list-style: none;
 }
 .project-list .project-item {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .project-list .project-item p {
   display: inline;

@@ -6,7 +6,20 @@
     <description>Recent content in Projects on Landon Ferguson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Nov 2024 12:00:00 -0400</lastBuildDate><atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Mar 2025 15:08:18 -0500</lastBuildDate><atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Game Jams</title>
+      <link>/projects/my-game-jams/</link>
+      <pubDate>Sat, 01 Mar 2025 15:08:18 -0500</pubDate>
+      
+      <guid>/projects/my-game-jams/</guid>
+      <description>Ludum Dare is a challenge to make a video game in 48 hours. Each of these games made in 48 hrs SOLO.
+ Except for 2 Shoes :)  The THEME is assigned by the Ludum Dare, but you&amp;rsquo;ll see they all have their own .. theme?
+ Saving Greg    Released: April 2021
+Theme: Deeper and deeper
+Join Greg on his most harrowing adventure yet as he descends into the unknown.</description>
+    </item>
+    
     <item>
       <title>Data-FX</title>
       <link>/projects/data-fx/</link>
@@ -46,7 +59,7 @@ The client then sends the drink selection data back to the server, and the serve
       <pubDate>Tue, 04 May 2021 04:58:52 -0400</pubDate>
       
       <guid>/projects/i-hear-them/</guid>
-      <description>I-Hear-Them is an in-browser 3D first-person horror game made with ThreeJS with the help of some custom built shaders.
+      <description>I-Hear-Them is an in-browser 3D first-person horror test game made with ThreeJS with the help of some custom built shaders.
    --  Play a demo  </description>
     </item>
     
