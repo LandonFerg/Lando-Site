@@ -40,6 +40,7 @@ function calculateSize()
 function draw()
 {
 
+    if (windowWidth > 700){
     let xc = 200, yc = 220;
         for (var i = 0; i < 200; i++)
         {
@@ -122,6 +123,7 @@ function draw()
                 pop();
             }
         }
+    }
 
 }
 
