@@ -40,7 +40,7 @@ function calculateSize()
 function draw()
 {
 
-    if (windowWidth > 700){
+    if(windowWidth > 700){
     let xc = 200, yc = 220;
         for (var i = 0; i < 200; i++)
         {
@@ -57,7 +57,7 @@ function draw()
                 // find distance between tri midpoints
                 var d = dist(tri.x, tri.y, other.x, other.y);
 
-                if(tri.x >= windowWidth*0.27 && tri.x <= windowWidth*0.67)
+                if(tri.x >= windowWidth*0.23 && tri.x <= windowWidth*0.72)
                 {
                     // break if intersecting text area
                     overlap = true;
@@ -72,7 +72,12 @@ function draw()
             }
             if(!overlap)
             {
-                tris.push(tri)
+                if(tri.x >= windowWidth*0.23 && tri.x <= windowWidth*0.72)
+                {}
+                else
+                {
+                    tris.push(tri)
+                }
             }
         }
 
