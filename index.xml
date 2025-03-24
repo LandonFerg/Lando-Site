@@ -72,7 +72,7 @@ What Is Greg? Greg is a phenomenon widely observed in my LD submissions. My crut
       <description>#the-about-page-to-end-all-about-pages{ text-align: center; } .contact-links { display: flex; flex-direction: column; gap: 10px; } .contact-links a { display: inline-flex; align-items: center; text-decoration: none; width: fit-content; } .contact-links a svg { margin-right: 5px; } .contact-links a:hover { text-decoration: underline; }  About I code things
 Feel free to look at my github page.
 Contact I&amp;rsquo;m best reached by email.
-   landonljf@gmail.com      LinkedIn   Things I Use Languages : C#, C++, Python, JavaScript, GLSL/HLSL</description>
+   landonljf@gmail.com      LinkedIn   Things I Use Languages : Python, C#, Java, C++, JavaScript, TypeScript, GLSL/HLSL</description>
     </item>
     
     <item>
